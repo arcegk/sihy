@@ -17,7 +17,18 @@ BASE_DIR = dirname(dirname(__file__))
 
 TEMPLATE_DIRS = (
         join(BASE_DIR, 'templates'),
+
     )
+
+STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
+
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+STATIC_URL = '/static/'
+
+    # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = (
+    join(BASE_DIR, 'static'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -97,12 +108,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = '/static/'
-
-    # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-    join(BASE_DIR, 'static'),
-)
