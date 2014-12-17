@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'map',
     'endless_pagination',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,10 +68,10 @@ WSGI_APPLICATION = 'appHidrica.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'appJorge',
-        'USER' : 'app',
-        'PASSWORD': 'kevinarce',
-        'HOST': 'localhost',
+        'NAME': 'ec2-54-221-249-3.compute-1.amazonaws.com',
+        'USER' : 'fforgggqadwlyr',
+        'PASSWORD': 'c9cOdEkSSoHl_c80IBh2vMXuUg',
+        'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
