@@ -1,0 +1,1 @@
+web: gunicorn appHidrica.wsgi --log-file -
