@@ -20,7 +20,7 @@ TEMPLATE_DIRS = (
 
     )
 
-STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
+STATIC_ROOT = 'staticfiles'
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
@@ -91,6 +91,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
 )
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
