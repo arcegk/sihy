@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'appHidrica.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ec2-54-221-249-3.compute-1.amazonaws.com',
+        'NAME': 'd2pi32vnaplu5c',
         'USER' : 'fforgggqadwlyr',
         'PASSWORD': 'c9cOdEkSSoHl_c80IBh2vMXuUg',
         'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
