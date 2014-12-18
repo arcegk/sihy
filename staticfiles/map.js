@@ -1,5 +1,8 @@
   var searchMap;
   var resultMarkers = [];
+  var directionsDisplay = new google.maps.DirectionsRenderer();
+  var directionsService = new google.maps.DirectionsService(); 
+  
   var defaults = {
     map: {
       mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -37,9 +40,10 @@ mark = new google.maps.Marker({
 
 
 
-
+var center_po = new google.maps.LatLng(3.43722, -76.5275);
 var infoPre = document.getElementById("some");
 var listLinks = document.getElementById("lista");
+var infoNac = document.getElementById("info");
 var markers = [];
 var markerse = [];
     (function (){
@@ -56,17 +60,49 @@ var markerse = [];
             });
 
             bounds.extend(latlng);
+           
 
-            google.maps.event.addListener(marker, 'click', function() {
+            google.maps.event.addListener(marker, 'click', function(e) {
+
+                mymap.setZoom(18);
+                mymap.panTo(latlng);
+
+
+                 var request = {
+                origin: center_po,
+                destination: latlng,
+                travelMode: google.maps.DirectionsTravelMode["DRIVING"],
+                unitSystem: google.maps.DirectionsUnitSystem["METRIC"],
+                provideRouteAlternatives: true
+                  };
+
+                directionsService.route(request, function(response, status) {
+                      if (status == google.maps.DirectionsStatus.OK) {
+                          directionsDisplay.setMap(mymap);
+                          directionsDisplay.setDirections(response);
+                          directionsDisplay.setOptions( { suppressMarkers: true , 
+                                                          preserveViewport : true } );
+
+                          
+                      }
+                  });
+
 
                 for (var i = 0; i < markerse.length; i++) {
                 markerse[i].setMap(null);
                 }
                 markerse = [];
 
-                 infoPre.style.visibility = 'visible'; 
-                 listLinks.style.visibility = 'hidden';
-                 infoPre.innerHTML = info(predio); 
+                infoPre.style.visibility = 'visible'; 
+                listLinks.style.visibility = 'hidden';
+                infoNac.style.visibility = 'hidden';
+                infoPre.className = "list-group col-md-12";
+                infoPre.innerHTML = info(predio); 
+
+               
+
+                
+                
 
               $.each(nacimientos, function(i, nacimiento) {
                  /* iterate through array or object 
@@ -83,6 +119,11 @@ var markerse = [];
                   bounds.extend(latlng);
 
                   google.maps.event.addListener(marker, 'click', function() {
+                        infoPre.className = "list-group col-md-6";
+                        infoNac.style.visibility = 'visible';
+                        infoNac.innerHTML = infoNa(nacimiento);
+
+
                          });
 
                   markerse.push( marker );
@@ -94,24 +135,35 @@ var markerse = [];
               });
 
               if (nacimientos.length > 0) {
-                  mymap.fitBounds(bounds);
-                  mymap.panToBounds(bounds);
+
+                
 
               }
+
+
           });
+
+
 
           
             markers.push( marker );
         });
 
         if (predios.length > 0) {
-            mymap.fitBounds(bounds);
-            mymap.panToBounds(bounds);
+             window.setTimeout(function() {
+                  mymap.setZoom(9);
+                  window.setTimeout(function() {
+                  mymap.setZoom(12);
+                  
+             }, 1000);
+             }, 3000);
 
+                 
         }
     })();
 
           function info(predio){
+                
                 var html = "<li" + " class="+"list-group-item"+">";
                 var tag = "</li>";
                 var text =  html + "catastro:" + predio.catastro+ tag +
@@ -125,9 +177,36 @@ var markerse = [];
                             html +'presion antropica:' + predio.presion_antropica+ tag +
                             html +'via pavimentada:' + predio.via_pavimentada+ tag +
                             html +'via destapada:' + predio.via_destapada+ tag +
-                            html +'via trocha:' + predio.via_trocha+ tag ;
+                            html +'via trocha:' + predio.via_trocha+ tag +"</div>";
 
                 return text
+
+          }
+
+          function infoNa(nacimiento){
+              
+              var html = "<li  class='list-group-item' >";
+              var tag = "</li>";
+              var text =  html + 'caudal: ' + nacimiento.caudal+ tag +
+                          html + 'ph: ' + nacimiento.ph+ tag +
+                          html + 'color: ' + nacimiento.color+ tag +
+                          html + 'turbiedad: ' + nacimiento.turbiedad+ tag +
+                          html + 'dureza: ' + nacimiento.dureza+ tag +
+                          html + 'sulfatos: ' + nacimiento.sulfatos+ tag +
+                          html + 'nitratos: ' + nacimiento.nitratos+ tag +
+                          html + 'temperatura: ' + nacimiento.temperatura+ tag +
+                          html + 'dbo: ' + nacimiento.dbo+ tag +
+                          html + 'solidos: ' + nacimiento.solidos+ tag +
+                          html + 'dqo: ' + nacimiento.dqo+ tag +
+                          html + 'coliformes: ' + nacimiento.coliformes+ tag +
+                          html + 'predio: ' + nacimiento.predio+ tag +
+                          html + 'cabecera municipal: ' + nacimiento.cabecera_municipal+ tag +
+                          html + 'topoespecificacion: ' + nacimiento.topo_especificacion+ tag +
+                          html + 'altura: ' + nacimiento.altura+ tag + "</div>" ;
+
+
+                return text
+
 
           }
 
