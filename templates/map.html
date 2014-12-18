@@ -1,7 +1,7 @@
  <html>
 {% load static from staticfiles %}
 <head>
- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyClMBrNxoFGUzd-8Fg1jRibAy6-8cghogk&sensor=false&amp;libraries=places"></script>
+ <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'map.js' %}"></script>
@@ -18,10 +18,12 @@
     <div class="well well-lg"></div>
   </div>
   <div class="row">
-    <div class="col-md-8" id = "mymap" style = "width:60%; height:50%"> </div>  
+    <div class="col-md-8" id = "mymap" style = "width:60%; height:80%"> </div>  
     <div class="col-md-4">
-     <div class="list-group" style = "visibility:hidden"  id="some" >
+     <div class="list-group col-md-6" style = "visibility:hidden"  id="some" >
       </div>
+       <div class="list-group col-md-6" style = "visibility:hidden"  id="info" >
+        </div>
    <div class="list-group" id="lista">
   <li class="list-group-item active">Mayor y menor características:</li>
   <a href="#" class="list-group-item">según área:</a>
@@ -29,6 +31,7 @@
   <a href="#" class="list-group-item">según número de nacimientos</a>
   <a href="#" class="list-group-item">según presión antrópica</a>
 </div>
+
   </div>
     </div>
 

@@ -69,38 +69,3 @@ class MapView(ListView):
 				})
 		return json.dumps(items)
 
-"""class NacimientoListView(ListView):
-	template_name = 'map.html'
-	queryset = Nacimiento.objects.all()
-
-	def get_context_data(self , **kwargs):
-		context = super(NacimientoListView, self).get_context_data(**kwargs)
-		context['json_object_list'] = self.get_json_results()
-		return context
-
-	def get_json_results(self):
-
-		items = []
-		for item in self.object_list:
-			items.append({
-				'caudal' : item.caudal,
-				'ph' : item.ph,
-				'color' : item.color,
-				'turbiedad' : item.turbiedad,
-				'dureza' : item.dureza,
-				'sulfatos' : item.sulfatos,
-				'nitratos' : item.nitratos,
-				'temperatura' : item.temperatura,
-				'dbo' : item.dbo,
-				'solidos' : item.solidos,
-				'dqo' : item.dqo,
-				'coliformes' : item.coliformes,
-				'cabecera_municipal' : item.cabecera_municipal, 
-				'topo_especificacion' : item.topo_especificacion,
-				'altura' : item.altura,
-				'predio' : item.predio,
-				'latitude' : item.latitude,
-				'longitude' : item.longitude,
-				})
-		return json.dumps(items)
-"""
