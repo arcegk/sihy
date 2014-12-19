@@ -18,7 +18,7 @@ class Predio(models.Model):
 	sub_cuenca = models.CharField(max_length=25 , choices=constants.SUB_CUENCAS)
 	temperatura = models.FloatField(default = 0.0)
 	presion_antropica = models.CharField(max_length=25 , choices=constants.PRESION)
-	photo = models.ImageField(blank=True)
+	photo = models.ImageField(upload_to='media' ,blank=True)
 	via_pavimentada = models.FloatField(default = 0.0)
 	via_destapada = models.FloatField(default = 0.0)
 	via_trocha = models.FloatField(default = 0.0)
@@ -31,8 +31,8 @@ class Predio(models.Model):
 class Nacimiento(models.Model):
 	
 	
-	photo = models.ImageField(blank=True)
-	vegetable_photo = models.ImageField(blank=True)
+	photo = models.ImageField(upload_to='media' ,blank=True)
+	vegetable_photo = models.ImageField(upload_to='media' ,blank=True)
 	caudal = models.FloatField(default = 0.0)
 	ph = models.FloatField (default=0.0)
 	color = models.CharField(max_length=25 , choices=constants.COLOR)
