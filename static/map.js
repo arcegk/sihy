@@ -26,7 +26,7 @@ var center_point = new google.maps.LatLng(3.43722, -76.5225);
 
 var bounds = new google.maps.LatLngBounds();
 $().ready(function() {
-var mymap = init(document.getElementById('mymap'), {
+var mymap = init(document.getElementById('map_canvas'), {
 center: center_point
 });
 
@@ -40,7 +40,7 @@ mark = new google.maps.Marker({
 
 
 
-var center_po = new google.maps.LatLng(3.43722, -76.5275);
+var center_po = new google.maps.LatLng(3.43822, -76.5295);
 var infoPre = document.getElementById("some");
 var listLinks = document.getElementById("lista");
 var infoNac = document.getElementById("info");
@@ -113,7 +113,8 @@ var markerse = [];
 
                   marker = new google.maps.Marker({
                       position: latlng,
-                      map: mymap
+                      map: mymap,
+                      icon: '/static/icon.png',
                   });
 
                   bounds.extend(latlng);
@@ -134,13 +135,7 @@ var markerse = [];
                 
               });
 
-              if (nacimientos.length > 0) {
-
-                
-
-              }
-
-
+              
           });
 
 

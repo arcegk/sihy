@@ -1,51 +1,68 @@
- <html>
+ <html lang="es"  xmlns="http://www.w3.org/1999/xhtml">
 {% load static from staticfiles %}
+
 <head>
- <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+ <!-- all css -->
+<link rel="stylesheet" href="{% static 'bootstrap.min.css'%}">
 <link rel="stylesheet" href="{% static 'custom.css' %}">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+
+<!-- JS -->
+<script src="{% static 'jquery.min.js' %}"></script>
+<script src="{%static 'fun.js'%}"></script>
+</script>
 <script type="text/javascript" src="{% static 'map.js' %}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
         var predios = {{object_list_json|safe}};
         </script>
 <script type="text/javascript">
         var nacimientos = {{json_object_list|safe}};
          </script>
+<script type="text/javascript">
+      jQuery(document).ready(function () {
+
+            scrolling.init();
+        });
+        </script>
+
+
+<!-- Html -->
 </head>
 <body>
-  <div class="container-fluid" >
+  
   <div class="row" >
     
     <div class="well fixed">SIHY</div >
   </div>
   
-</div>
-  
-    <div class="row"  >
-      <div class="col-md-7 col-sm-5">
-         <div id = "mymap" style = "height:100% "> </div> 
-       </div>
-      <div id="results-wrapper" style="margin: 0" class="col-md-5 col-sm-7">
-       <div class="list-group col-md-6 lets"  id="some" >
-       </div>
-       <div class="list-group col-md-6 lets"  id="info" >
-       </div>
-   <div class="list-group col-md-12"   id="lista">
-  <li class="list-group-item header well fixed" >Mayor y menor características:</li>
-  <a href="#" class="list-group-item">según área: {{max_area}}</a>
-  <a href="#" class="list-group-item">según caudal: {{max_volume}}</a>
-  <a href="#" class="list-group-item">según número de nacimientos: {{max_source}}</a>
-  <a href="#" class="list-group-item">según presión antrópica</a>
-</div>
-</div>
-  </div>
 
-
-   
-
-     
+  <div class="container-fluid">
+    <div class="row" >
+        <div id="map-contain" class="col-md-7 hidden-xs  col-sm-5"  > 
+          <div id="map-wrap" >
+           <div id = "map_canvas" > </div>
+           </div> 
+        </div>
+        <div style="margin: 0" id="info-wrap" class="col-md-5 col-sm-7">
+            
+            <div style="position:relative">
+                <div class="list-group col-md-6 lets"  id="some" ></div>
+                <div class="list-group col-md-6 lets"  id="info" ></div>
+                <div class="list-group col-md-12"   id="lista">
+                    <li class="list-group-item header well fixed" >Mayor y menor características:</li>
+                    <a href="#" class="list-group-item">según área: {{max_area}}</a>
+                    <a href="#" class="list-group-item">según caudal: {{max_volume}}</a>
+                    <a href="#" class="list-group-item">según número de nacimientos: {{max_source}}</a>
+                    <a href="#" class="list-group-item">según presión antrópica</a>
+                </div>
+           </div>
+        </div>
     </div>
+  </div>
+     
+    
 
 </body>
  </html>

@@ -8,10 +8,25 @@
 	margin : 0;
 }
 
-#mymap {
+#map_canvas {
+	
 	height : 100%;
 }
 
+#map-contain{
+  	padding: 0px !important;
 
 
+}
 
+.map-fixed{
+	position: fixed;
+	height: 100%;
+	width: 58.33%;
+	top:0px;
+}
+
+html{
+
+	overflow-x: hidden; 
+}
