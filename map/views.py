@@ -15,11 +15,16 @@ class MapView(ListView):
 		context = super(MapView, self).get_context_data(**kwargs)
   		context['object_list_json'] = self.get_json_results()
   		context['json_object_list'] = self.get_json()
-  		context['max_area'] = self.get_higher_area()
-  		context['max_source'] = self.get_higher_source()
-  		context['max_volume'] = self.get_higher_volume()
- 		return context
+  		context['max_area'] = self.get_highest_area()
+  		context['max_source'] = self.get_highest_source()
+  		context['max_volume'] = self.get_highest_volume()
+  		context['max_pressure'] = self.get_highest_pressure()
+  		context['min_area'] = self.get_smallest_area()
+  		context['min_source'] = self.get_smallest_source()
+  		context['min_volume'] = self.get_smallest_volume()
+  		context['min_pressure'] = self.get_smallest_source()
 
+ 		return context
 	def get_json_results(self):
 	        items = []
 	        for item in self.object_list:
@@ -72,28 +77,20 @@ class MapView(ListView):
 				})
 		return json.dumps(items)
 
+############################################################################
+	def get_highest_area(self):
+		highest = self.object_list[0]
+		for item in self.object_list:
+			if item.area > highest.area:
+				highest = item
 
-	def get_higher_area(self):
-		queryset = Predio.objects.all()
-		higher = queryset[0]
-		for item in queryset:
-			if item.area > higher.area:
-				higher = item
+		return highest
 
-		return higher
-
-	def get_smaller_area(self):
-		queryset = Predio.objects.all()
-		smaller = queryset[0]
-		for item in queryset:
-			if item.area < smaller.area:
-				smaller = item
-		return smaller
-
-	def get_higher_source(self):
-		queryset = Predio.objects.all()
+	
+	def get_highest_source(self):
+		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
-		higher = queryset[0]
+		highest = queryset[0]
 		count = 0
 		
 		for predio in queryset:
@@ -105,14 +102,14 @@ class MapView(ListView):
 					count = count + 1
 										
 			if count > aux:
-				higher = predio
+				highest = predio
 					
-		return higher
+		return highest
 
-	def get_higher_volume(self):
-		queryset = Predio.objects.all()
+	def get_highest_volume(self):
+		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
-		higher = source_queryset[0]
+		highest = source_queryset[0]
 		caudal = 0
 
 		for predio in queryset:
@@ -124,10 +121,98 @@ class MapView(ListView):
 					caudal = caudal+ source.caudal
 
 			if caudal > aux:
-				higher = predio
+				highest = predio
 
-		return higher
+		return highest
+
+
+	def get_highest_pressure(self):
+		
+		highest = self.object_list[0]
+
+		for item in self.object_list:
+			if item.presion_antropica > highest.presion_antropica:
+				highest = item
+
+		return highest
+
+#############################################################################
 					
-
+	def get_smallest_area(self):
+		smallest = self.object_list[0]
+		for item in self.object_list:
+			if item.area < smallest.area:
+				smallest = item
+		return smallest
 
 			
+	def get_smallest_source(self):
+			queryset = self.object_list
+			source_queryset = Nacimiento.objects.all()
+			smallest = queryset[0]
+			count = 0
+			
+			for predio in queryset:
+				aux = count
+				count = 0
+				
+				for source in source_queryset:
+					if source.predio == predio:
+						count = count + 1
+											
+				if count < aux:
+					smallest = predio
+						
+			return smallest
+
+	def get_smallest_volume(self):
+		queryset = self.object_list
+		source_queryset = Nacimiento.objects.all()
+		smallest = source_queryset[0]
+		caudal = 0
+
+		for predio in queryset:
+			aux = caudal
+			caudal = 0
+
+			for source in source_queryset:
+				if source.predio == predio:
+					caudal = caudal+ source.caudal
+
+			if caudal < aux:
+				smallest = predio
+
+		return smallest
+
+
+		def get_smallest_pressure(self):
+			
+			smallest = self.object_list[0]
+
+			for item in queryset:
+				if item.presion_antropica > smallest.presion_antropica:
+					smallest = item
+
+			return smallest
+############################################################3
+
+		def get_highest_caudal_source(self):
+			queryset = Nacimiento.objects.all()
+			smallest = queryset[0]
+
+			for item in queryset:
+				if item.caudal < smallest.caudal:
+					smallest = item
+
+			return smallest
+
+
+		def get_higher_caudal_source(self):
+			queryset = Nacimiento.objects.all()
+			highest = queryset[0]
+			for item in queryset:
+				if item > highest:
+					highest = item
+			return highest
+
+

@@ -26,6 +26,12 @@
 	top:0px;
 }
 
+.sub-item{
+
+	margin-bottom: 0;
+	border: 1px solid #E1E1E8;
+}
+
 html{
 
 	overflow-x: hidden; 

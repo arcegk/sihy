@@ -95,7 +95,9 @@ var markerse = [];
 
                 infoPre.style.visibility = 'visible'; 
                 listLinks.style.visibility = 'hidden';
+                listLinks.innerHTML = "";
                 infoNac.style.visibility = 'hidden';
+                infoNac.innerHTML="";
                 infoPre.className = "list-group col-md-12";
                 infoPre.innerHTML = info(predio); 
 

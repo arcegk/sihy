@@ -24,9 +24,17 @@
       jQuery(document).ready(function () {
 
             scrolling.init();
-        });
+            
+});
+       
         </script>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      
+    
+});
+        </script>
 
 <!-- Html -->
 </head>
@@ -46,16 +54,27 @@
            </div> 
         </div>
         <div style="margin: 0" id="info-wrap" class="col-md-5 col-sm-7">
-            
-            <div style="position:relative">
+  
+            <div style="position:relative ">
                 <div class="list-group col-md-6 lets"  id="some" ></div>
                 <div class="list-group col-md-6 lets"  id="info" ></div>
                 <div class="list-group col-md-12"   id="lista">
                     <li class="list-group-item header well fixed" >Mayor y menor características:</li>
-                    <a href="#" class="list-group-item">según área: {{max_area}}</a>
-                    <a href="#" class="list-group-item">según caudal: {{max_volume}}</a>
-                    <a href="#" class="list-group-item">según número de nacimientos: {{max_source}}</a>
-                    <a href="#" class="list-group-item">según presión antrópica</a>
+                    <a href="#" id="itm1" class="list-group-item">según área: </a>
+
+                         <div id="sub1" class="collapse sub-item">Predio con mayor área : {{max_area}} </br> Predio con menor área : {{min_area}}</div>
+
+                    <a href="#" id="itm2" class="list-group-item">según caudal: </a>
+
+                         <div id="sub2" class="collapse sub-item">Predio con mayor caudal : {{max_volume}} </br> Predio con menor caudal : {{min_volume}}</div>
+
+                    <a href="#" id="itm3" class="list-group-item">según número de nacimientos:</a>
+
+                         <div id="sub3" class="collapse sub-item">Predio con mayor N° de nacimientos: {{max_source}} </br> Predio con menor N° de nacimientos : {{min_source}}</div>
+
+                    <a href="#" id="itm4"class="list-group-item">según presión antrópica:</a>
+
+                         <div id="sub4" class="collapse sub-item">Predio con mayor P. antrópica : {{max_pressure}} </br> Predio con menor P. antrópica : {{min_pressure}}</div>
                 </div>
            </div>
         </div>
