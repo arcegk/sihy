@@ -22,7 +22,7 @@
 
 
 
-var center_point = new google.maps.LatLng(3.43722, -76.5225);
+var center_point = new google.maps.LatLng(3.5834, -76.4952);
 
 var bounds = new google.maps.LatLngBounds();
 $().ready(function() {
@@ -40,7 +40,7 @@ mark = new google.maps.Marker({
 
 
 
-var center_po = new google.maps.LatLng(3.43822, -76.5295);
+var center_po = new google.maps.LatLng(3.5834, -76.4952);
 var infoPre = document.getElementById("some");
 var listLinks = document.getElementById("lista");
 var infoNac = document.getElementById("info");
@@ -150,7 +150,7 @@ var markerse = [];
              window.setTimeout(function() {
                   mymap.setZoom(9);
                   window.setTimeout(function() {
-                  mymap.setZoom(12);
+                  mymap.setZoom(14);
                   
              }, 1000);
              }, 3000);
