@@ -6,7 +6,7 @@ from . import constants
 
 class Predio(models.Model):
 
-
+	nombre = models.CharField(max_length=30 , default='')
 	catastro = models.CharField(max_length=25)
 	escritura = models.CharField(max_length=25)
 	area = models.IntegerField()
@@ -24,13 +24,13 @@ class Predio(models.Model):
 	via_trocha = models.FloatField(default = 0.0)
 
 	def __str__(self):
-		return ("%s - %s") % (self.catastro , self.vereda)
+		return ("%s - %s") % (self.nombre , self.vereda)
 
 
 
 class Nacimiento(models.Model):
 	
-	
+	identificador = models.CharField(max_length=25, default='')
 	photo = models.ImageField(upload_to='media' ,blank=True)
 	vegetable_photo = models.ImageField(upload_to='media' ,blank=True)
 	caudal = models.FloatField(default = 0.0)
@@ -53,4 +53,4 @@ class Nacimiento(models.Model):
 	longitude = models.FloatField(default=0.0)
 
 	def __str__(self):
-		return ("%s - %s") %(self.cabecera_municipal , self.predio.catastro)
+		return ("%s - %s") %(self.identificador , self.predio.nombre)

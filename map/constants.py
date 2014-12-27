@@ -20,7 +20,11 @@ CUENCAS = (
 
 PRESION = (
 
-	('key' , 'value'),
+	('1' , 'val1'),
+	('2' , 'val2'),
+	('3' , 'val3'),
+	('4' , 'val4'),
+	('5' , 'val5'),
 
 )
 

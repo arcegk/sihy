@@ -45,6 +45,7 @@ class MapView(ListView):
 					'via_trocha': item.via_trocha,
 					'id' : item.id , 
 					'photo' : item.photo.url ,
+					'nombre' : item.nombre ,
 	                })
 	            
 	        return json.dumps(items)

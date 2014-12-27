@@ -22,6 +22,7 @@
 
 
 
+
 var center_point = new google.maps.LatLng(3.5834, -76.4952);
 
 var bounds = new google.maps.LatLngBounds();
@@ -32,8 +33,9 @@ center: center_point
 
 mark = new google.maps.Marker({
 
-  position: center_point
-  
+  position: center_point,
+  map : mymap,
+  icon : '/static/icon-blue.png'
 });
 
 
@@ -165,18 +167,19 @@ var markerse = [];
                 var thumb = "<li class='list-group-item thumbnail'>";
                 var tag = "</li>";
                 var text =  thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag +
-                            html + "catastro:" + predio.catastro+ tag +
-                            html + 'escritura:' + predio.escritura+ tag +
-                            html +'area:' + predio.area+ tag +
-                            html +'corregimiento:' + predio.corregimiento+ tag +
-                            html +'vereda:' + predio.vereda+ tag +
-                            html +'cuenca:' + predio.cuenca+ tag +
-                            html +'sub cuenca:' + predio.sub_cuenca+ tag +
-                            html +'temperatura:' + predio.temperatura+ tag +
-                            html +'presion antropica:' + predio.presion_antropica+ tag +
-                            html +'via pavimentada:' + predio.via_pavimentada+ tag +
-                            html +'via destapada:' + predio.via_destapada+ tag +
-                            html +'via trocha:' + predio.via_trocha+ tag +"</div>";
+                            html + 'Nombre: ' + predio.nombre + tag +
+                            html + "catastro: " + predio.catastro+ tag +
+                            html + 'escritura :' + predio.escritura+ tag +
+                            html +'area: ' + predio.area+ tag +
+                            html +'corregimiento: ' + predio.corregimiento+ tag +
+                            html +'vereda: ' + predio.vereda+ tag +
+                            html +'cuenca: ' + predio.cuenca+ tag +
+                            html +'sub cuenca: ' + predio.sub_cuenca+ tag +
+                            html +'temperatura: ' + predio.temperatura+ tag +
+                            html +'presion antropica: ' + predio.presion_antropica+ tag +
+                            html +'via pavimentada: ' + predio.via_pavimentada+ tag +
+                            html +'via destapada: ' + predio.via_destapada+ tag +
+                            html +'via trocha: ' + predio.via_trocha+ tag +"</div>";
 
                 return text
 
