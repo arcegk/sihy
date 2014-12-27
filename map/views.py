@@ -75,6 +75,7 @@ class MapView(ListView):
 				'altura' : item.altura,
 				'latitude' : item.latitude,
 				'longitude' : item.longitude,
+				'identificador' : item.identificador,
 				})
 		return json.dumps(items)
 

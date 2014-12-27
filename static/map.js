@@ -21,6 +21,10 @@
   }
 
 
+/*
+SET BUTTON , DONT FORGET!
+*/
+
 
 
 var center_point = new google.maps.LatLng(3.5834, -76.4952);
@@ -189,7 +193,8 @@ var markerse = [];
               
               var html = "<li  class='list-group-item' >";
               var tag = "</li>";
-              var text =  html + 'caudal: ' + nacimiento.caudal+ tag +
+              var text =  html + 'identificador: ' + nacimiento.identificador + tag +
+                          html + 'caudal: ' + nacimiento.caudal+ tag +
                           html + 'ph: ' + nacimiento.ph+ tag +
                           html + 'color: ' + nacimiento.color+ tag +
                           html + 'turbiedad: ' + nacimiento.turbiedad+ tag +
@@ -201,7 +206,6 @@ var markerse = [];
                           html + 'solidos: ' + nacimiento.solidos+ tag +
                           html + 'dqo: ' + nacimiento.dqo+ tag +
                           html + 'coliformes: ' + nacimiento.coliformes+ tag +
-                          html + 'predio: ' + nacimiento.predio+ tag +
                           html + 'cabecera municipal: ' + nacimiento.cabecera_municipal+ tag +
                           html + 'topoespecificacion: ' + nacimiento.topo_especificacion+ tag +
                           html + 'altura: ' + nacimiento.altura+ tag + "</div>" ;
