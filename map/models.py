@@ -6,7 +6,7 @@ from . import constants
 
 class Predio(models.Model):
 
-	nombre = models.CharField(max_length=30 , default='')
+	nombre = models.CharField(max_length=30 , blank=False)
 	catastro = models.CharField(max_length=25)
 	escritura = models.CharField(max_length=25)
 	area = models.IntegerField()
@@ -24,7 +24,7 @@ class Predio(models.Model):
 	via_trocha = models.FloatField(default = 0.0)
 
 	def __str__(self):
-		return ("%s - %s") % (self.nombre , self.vereda)
+		return ( "%s") % (self.nombre)
 
 
 

@@ -111,7 +111,7 @@ class MapView(ListView):
 	def get_highest_volume(self):
 		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
-		highest = source_queryset[0]
+		highest = queryset[0]
 		caudal = 0
 
 		for predio in queryset:
@@ -170,7 +170,7 @@ class MapView(ListView):
 	def get_smallest_volume(self):
 		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
-		smallest = source_queryset[0]
+		smallest = queryset[0]
 		caudal = 0
 
 		for predio in queryset:
@@ -187,34 +187,33 @@ class MapView(ListView):
 		return smallest
 
 
-		def get_smallest_pressure(self):
+	def get_smallest_pressure(self):
 			
-			smallest = self.object_list[0]
+		smallest = self.object_list[0]
+		for item in queryset:
+			if item.presion_antropica > smallest.presion_antropica:
+				smallest = item
 
-			for item in queryset:
-				if item.presion_antropica > smallest.presion_antropica:
-					smallest = item
-
-			return smallest
+		return smallest
 ############################################################3
 
-		def get_highest_caudal_source(self):
-			queryset = Nacimiento.objects.all()
-			smallest = queryset[0]
+	def get_highest_caudal_source(self):
+		queryset = Nacimiento.objects.all()
+		smallest = queryset[0]
 
-			for item in queryset:
-				if item.caudal < smallest.caudal:
-					smallest = item
+		for item in queryset:
+			if item.caudal < smallest.caudal:
+				smallest = item
 
-			return smallest
+		return smallest
 
 
-		def get_higher_caudal_source(self):
-			queryset = Nacimiento.objects.all()
-			highest = queryset[0]
-			for item in queryset:
-				if item > highest:
+	def get_higher_caudal_source(self):
+		queryset = Nacimiento.objects.all()
+		highest = queryset[0]
+		for item in queryset:
+			if item > highest:
 					highest = item
-			return highest
+		return highest
 
 

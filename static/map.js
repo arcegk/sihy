@@ -43,6 +43,7 @@ mark = new google.maps.Marker({
 });
 
 
+$("#btn-back").hide();
 
 
 
@@ -100,12 +101,15 @@ var markerse = [];
                 markerse = [];
 
                 infoPre.style.visibility = 'visible'; 
-                listLinks.style.visibility = 'hidden';
-                listLinks.innerHTML = "";
+
+                
+                $("#lista").hide();
+                //listLinks.innerHTML = "";
                 infoNac.style.visibility = 'hidden';
                 infoNac.innerHTML="";
                 infoPre.className = "list-group col-md-12";
                 infoPre.innerHTML = info(predio); 
+                $("#btn-back").show();
 
                
 
@@ -129,8 +133,9 @@ var markerse = [];
 
                   google.maps.event.addListener(marker, 'click', function() {
                         infoPre.className = "list-group col-md-6";
-                        infoNac.style.visibility = 'visible';
+                        infoNac.style.visibility = "visible";
                         infoNac.innerHTML = infoNa(nacimiento);
+                        
 
 
                          });
@@ -216,6 +221,13 @@ var markerse = [];
 
           }
 
+          $("#btn-back").click(function(){
+
+            $("#lista").show("slow");
+            infoNac.innerHTML="";
+            infoPre.innerHTML="";
+            $(this).hide();
+          });
 
 });
 
