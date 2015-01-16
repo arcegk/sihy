@@ -21,8 +21,13 @@
   }
 
 
+/*
+SET BUTTON , DONT FORGET!
+*/
 
-var center_point = new google.maps.LatLng(3.43722, -76.5225);
+
+
+var center_point = new google.maps.LatLng(3.5834, -76.4952);
 
 var bounds = new google.maps.LatLngBounds();
 $().ready(function() {
@@ -32,15 +37,17 @@ center: center_point
 
 mark = new google.maps.Marker({
 
-  position: center_point
-  
+  position: center_point,
+  map : mymap,
+  icon : '/static/icon-blue.png'
 });
 
 
+$("#btn-back").hide();
 
 
 
-var center_po = new google.maps.LatLng(3.43822, -76.5295);
+var center_po = new google.maps.LatLng(3.5834, -76.4952);
 var infoPre = document.getElementById("some");
 var listLinks = document.getElementById("lista");
 var infoNac = document.getElementById("info");
@@ -94,12 +101,15 @@ var markerse = [];
                 markerse = [];
 
                 infoPre.style.visibility = 'visible'; 
-                listLinks.style.visibility = 'hidden';
-                listLinks.innerHTML = "";
+
+                
+                $("#lista").hide();
+                //listLinks.innerHTML = "";
                 infoNac.style.visibility = 'hidden';
                 infoNac.innerHTML="";
                 infoPre.className = "list-group col-md-12";
                 infoPre.innerHTML = info(predio); 
+                $("#btn-back").show();
 
                
 
@@ -123,8 +133,9 @@ var markerse = [];
 
                   google.maps.event.addListener(marker, 'click', function() {
                         infoPre.className = "list-group col-md-6";
-                        infoNac.style.visibility = 'visible';
+                        infoNac.style.visibility = "visible";
                         infoNac.innerHTML = infoNa(nacimiento);
+                        
 
 
                          });
@@ -150,7 +161,7 @@ var markerse = [];
              window.setTimeout(function() {
                   mymap.setZoom(9);
                   window.setTimeout(function() {
-                  mymap.setZoom(12);
+                  mymap.setZoom(14);
                   
              }, 1000);
              }, 3000);
@@ -165,18 +176,19 @@ var markerse = [];
                 var thumb = "<li class='list-group-item thumbnail'>";
                 var tag = "</li>";
                 var text =  thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag +
-                            html + "catastro:" + predio.catastro+ tag +
-                            html + 'escritura:' + predio.escritura+ tag +
-                            html +'area:' + predio.area+ tag +
-                            html +'corregimiento:' + predio.corregimiento+ tag +
-                            html +'vereda:' + predio.vereda+ tag +
-                            html +'cuenca:' + predio.cuenca+ tag +
-                            html +'sub cuenca:' + predio.sub_cuenca+ tag +
-                            html +'temperatura:' + predio.temperatura+ tag +
-                            html +'presion antropica:' + predio.presion_antropica+ tag +
-                            html +'via pavimentada:' + predio.via_pavimentada+ tag +
-                            html +'via destapada:' + predio.via_destapada+ tag +
-                            html +'via trocha:' + predio.via_trocha+ tag +"</div>";
+                            html + 'Nombre: ' + predio.nombre + tag +
+                            html + "catastro: " + predio.catastro+ tag +
+                            html + 'escritura :' + predio.escritura+ tag +
+                            html +'area: ' + predio.area+ tag +
+                            html +'corregimiento: ' + predio.corregimiento+ tag +
+                            html +'vereda: ' + predio.vereda+ tag +
+                            html +'cuenca: ' + predio.cuenca+ tag +
+                            html +'sub cuenca: ' + predio.sub_cuenca+ tag +
+                            html +'temperatura: ' + predio.temperatura+ tag +
+                            html +'presion antropica: ' + predio.presion_antropica+ tag +
+                            html +'via pavimentada: ' + predio.via_pavimentada+ tag +
+                            html +'via destapada: ' + predio.via_destapada+ tag +
+                            html +'via trocha: ' + predio.via_trocha+ tag +"</div>";
 
                 return text
 
@@ -186,7 +198,8 @@ var markerse = [];
               
               var html = "<li  class='list-group-item' >";
               var tag = "</li>";
-              var text =  html + 'caudal: ' + nacimiento.caudal+ tag +
+              var text =  html + 'identificador: ' + nacimiento.identificador + tag +
+                          html + 'caudal: ' + nacimiento.caudal+ tag +
                           html + 'ph: ' + nacimiento.ph+ tag +
                           html + 'color: ' + nacimiento.color+ tag +
                           html + 'turbiedad: ' + nacimiento.turbiedad+ tag +
@@ -198,7 +211,6 @@ var markerse = [];
                           html + 'solidos: ' + nacimiento.solidos+ tag +
                           html + 'dqo: ' + nacimiento.dqo+ tag +
                           html + 'coliformes: ' + nacimiento.coliformes+ tag +
-                          html + 'predio: ' + nacimiento.predio+ tag +
                           html + 'cabecera municipal: ' + nacimiento.cabecera_municipal+ tag +
                           html + 'topoespecificacion: ' + nacimiento.topo_especificacion+ tag +
                           html + 'altura: ' + nacimiento.altura+ tag + "</div>" ;
@@ -209,6 +221,13 @@ var markerse = [];
 
           }
 
+          $("#btn-back").click(function(){
+
+            $("#lista").show("slow");
+            infoNac.innerHTML="";
+            infoPre.innerHTML="";
+            $(this).hide();
+          });
 
 });
 
