@@ -18,7 +18,7 @@ class Predio(models.Model):
 	sub_cuenca = models.CharField(max_length=25 , choices=constants.SUB_CUENCAS)
 	temperatura = models.FloatField(default = 0.0)
 	presion_antropica = models.CharField(max_length=25 , choices=constants.PRESION)
-	photo = models.ImageField(upload_to='media' , default='no-imager.jpg')
+	photo = models.ImageField(upload_to='media' , default='media/no-imager.jpg')
 	via_pavimentada = models.FloatField(default = 0.0)
 	via_destapada = models.FloatField(default = 0.0)
 	via_trocha = models.FloatField(default = 0.0)
