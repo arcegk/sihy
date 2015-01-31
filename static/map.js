@@ -68,6 +68,7 @@ var markerse = [];
 
             bounds.extend(latlng);
            
+           
 
             google.maps.event.addListener(marker, 'click', function(e) {
 
