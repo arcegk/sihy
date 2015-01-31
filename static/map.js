@@ -161,7 +161,7 @@ var markerse = [];
              window.setTimeout(function() {
                   mymap.setZoom(9);
                   window.setTimeout(function() {
-                  mymap.setZoom(14);
+                  mymap.setZoom(12);
                   
              }, 1000);
              }, 3000);
@@ -175,7 +175,7 @@ var markerse = [];
                 var html = "<li" + " class="+"list-group-item"+">";
                 var thumb = "<li class='list-group-item thumbnail'>";
                 var tag = "</li>";
-                var text =  thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag +
+                var text = /* thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag + */
                             html + 'Nombre: ' + predio.nombre + tag +
                             html + "catastro: " + predio.catastro+ tag +
                             html + 'escritura :' + predio.escritura+ tag +

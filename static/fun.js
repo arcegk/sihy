@@ -11,7 +11,7 @@ var scrolling = function () {
 
     function fixedScroll() {
          jQuery(window).scroll(function() {
-            if (jQuery(window).scrollTop()>95){
+            if (jQuery(window).scrollTop()>200){
                jQuery("#map-wrap").addClass("map-fixed");
                 
             }
