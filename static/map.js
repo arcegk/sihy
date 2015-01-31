@@ -53,6 +53,8 @@ var listLinks = document.getElementById("lista");
 var infoNac = document.getElementById("info");
 var markers = [];
 var markerse = [];
+
+
     (function (){
 
         $.each(predios, function(i, predio) {
@@ -69,6 +71,15 @@ var markerse = [];
             bounds.extend(latlng);
            
            
+           
+           google.maps.event.addListener(marker , 'mouseover' , function(e){
+                infowindow.open(mymap , marker);
+
+           });
+
+           google.maps.event.addListener(marker , 'mouseout' , function(e){
+                infowindow.close(mymap , marker);
+           });
 
             google.maps.event.addListener(marker, 'click', function(e) {
 
