@@ -58,29 +58,20 @@ var markerse = [];
     (function (){
 
         $.each(predios, function(i, predio) {
-           /* iterate through array or object */
+           
           
             
             var latlng = new google.maps.LatLng(predio.latitude, predio.longitude);
 
             marker = new google.maps.Marker({
                 position: latlng,
-                map: mymap
+                map: mymap,
+                title : predio.nombre
             });
 
             bounds.extend(latlng);
            
            
-           
-           google.maps.event.addListener(marker , 'mouseover' , function(e){
-                infowindow.open(mymap , marker);
-
-           });
-
-           google.maps.event.addListener(marker , 'mouseout' , function(e){
-                infowindow.close(mymap , marker);
-           });
-
             google.maps.event.addListener(marker, 'click', function(e) {
 
                 mymap.setZoom(18);
@@ -139,6 +130,7 @@ var markerse = [];
                       position: latlng,
                       map: mymap,
                       icon: '/static/icon.png',
+                      title : nacimiento.identificador + '-' + predio.nombre
                   });
 
                   bounds.extend(latlng);
