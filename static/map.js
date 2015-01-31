@@ -185,7 +185,6 @@ var markerse = [];
                             html +'cuenca: ' + predio.cuenca+ tag +
                             html +'sub cuenca: ' + predio.sub_cuenca+ tag +
                             html +'temperatura: ' + predio.temperatura+ tag +
-                            html +'presion antropica: ' + predio.presion_antropica+ tag +
                             html +'via pavimentada: ' + predio.via_pavimentada+ tag +
                             html +'via destapada: ' + predio.via_destapada+ tag +
                             html +'via trocha: ' + predio.via_trocha+ tag +"</div>";
@@ -211,8 +210,6 @@ var markerse = [];
                           html + 'solidos: ' + nacimiento.solidos+ tag +
                           html + 'dqo: ' + nacimiento.dqo+ tag +
                           html + 'coliformes: ' + nacimiento.coliformes+ tag +
-                          html + 'cabecera municipal: ' + nacimiento.cabecera_municipal+ tag +
-                          html + 'topoespecificacion: ' + nacimiento.topo_especificacion+ tag +
                           html + 'altura: ' + nacimiento.altura+ tag + "</div>" ;
 
 

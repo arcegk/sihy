@@ -44,36 +44,18 @@ VEREDAS = (
 
 )
 SUB_CUENCAS = (
-	('KEY' , 'VALUE'),
-	('AA' , 'BB'),
+	('YUMBILLO' , 'YUMBILLO'),
+	('SANTA INES' , 'SANTA INÉS'),
+	('LA BUITRERA' , 'LA BUITRERA'),
+	('MULALO' , 'MULALÓ'),
+	('LA PEREZ' , 'LA PEREZ'),
 
 )
 
 CUENCAS = (
 
-	('KEY' , 'VALUE'),
+	('YUMBO' , 'YUMBO'),
+	('ARROYOHONDO' , 'ARROYOHONDO'),
+	('CAUCA' , 'CAUCA'),
 )
-
-PRESION = (
-
-	('1' , 'VAL1'),
-	('2' , 'VAL2'),
-	('3' , 'VAL3'),
-	('4' , 'VAL4'),
-	('5' , 'VAL5'),
-
-)
-
-COLOR = (
-	('KEY' , 'VALUE'),
-)
-
-CABECERA = (
-	('KEY' , 'VALUE'),
-)
-
-TOPO_ESPECIFICACION = (
-	('KEY' , 'VALUE'),
-) 
-	
 #################################################

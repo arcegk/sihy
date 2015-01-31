@@ -18,11 +18,10 @@ class MapView(ListView):
   		context['max_area'] = self.get_highest_area()
   		context['max_source'] = self.get_highest_source()
   		context['max_volume'] = self.get_highest_volume()
-  		context['max_pressure'] = self.get_highest_pressure()
   		context['min_area'] = self.get_smallest_area()
   		context['min_source'] = self.get_smallest_source()
   		context['min_volume'] = self.get_smallest_volume()
-  		context['min_pressure'] = self.get_smallest_source()
+  		
 
  		return context
 	def get_json_results(self):
@@ -39,12 +38,10 @@ class MapView(ListView):
 					'cuenca': item.cuenca,
 					'sub_cuenca': item.sub_cuenca,
 					'temperatura': item.temperatura,
-					'presion_antropica': item.presion_antropica,
 					'via_pavimentada': item.via_pavimentada,
 					'via_destapada': item.via_destapada,
 					'via_trocha': item.via_trocha,
 					'id' : item.id , 
-					'photo' : item.photo.url ,
 					'nombre' : item.nombre ,
 	                })
 	            
@@ -70,8 +67,6 @@ class MapView(ListView):
 				'dqo' : item.dqo,
 				'coliformes' : item.coliformes,
 				'predio' : item.predio.id ,
-				'cabecera_municipal' : item.cabecera_municipal, 
-				'topo_especificacion' : item.topo_especificacion,
 				'altura' : item.altura,
 				'latitude' : item.latitude,
 				'longitude' : item.longitude,
@@ -128,16 +123,6 @@ class MapView(ListView):
 		return highest
 
 
-	def get_highest_pressure(self):
-		
-		highest = self.object_list[0]
-
-		for item in self.object_list:
-			if item.presion_antropica > highest.presion_antropica:
-				highest = item
-
-		return highest
-
 #############################################################################
 					
 	def get_smallest_area(self):
@@ -187,15 +172,7 @@ class MapView(ListView):
 		return smallest
 
 
-	def get_smallest_pressure(self):
-			
-		smallest = self.object_list[0]
-		for item in queryset:
-			if item.presion_antropica > smallest.presion_antropica:
-				smallest = item
-
-		return smallest
-############################################################3
+############################################################
 
 	def get_highest_caudal_source(self):
 		queryset = Nacimiento.objects.all()
