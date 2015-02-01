@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from django.shortcuts import render
 import json
 from .models import Predio , Nacimiento
@@ -77,21 +78,25 @@ class MapView(ListView):
 ############################################################################
 	def get_highest_area(self):
 		highest = self.object_list[0]
+		result = highest.nombre + " - " + str(highest.area) + "(Ha)"
 		for item in self.object_list:
 			if item.area > highest.area:
 				highest = item
 
-		return highest
+				result = highest.nombre + " - " + "Nacimientos(s)" 
+
+		return result
 
 	
 	def get_highest_source(self):
 		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
 		highest = queryset[0]
+		result = highest.nombre + "-" 
 		count = 0
-		
+		aux = 0
 		for predio in queryset:
-			aux = count
+			
 			count = 0
 			
 			for source in source_queryset:
@@ -99,18 +104,20 @@ class MapView(ListView):
 					count = count + 1
 										
 			if count > aux:
+				aux = count
 				highest = predio
-					
-		return highest
+				result = highest.nombre + " - " + str(count) + " Nacimiento(s)" 				
+		return result 
 
 	def get_highest_volume(self):
 		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
 		highest = queryset[0]
+		result = highest.nombre + " " 
 		caudal = 0
 
+		aux = source_queryset[0].caudal
 		for predio in queryset:
-			aux = caudal
 			caudal = 0
 
 			for source in source_queryset:
@@ -118,29 +125,34 @@ class MapView(ListView):
 					caudal = caudal+ source.caudal
 
 			if caudal > aux:
+				aux = caudal
 				highest = predio
+				result = highest.nombre + " - " + str(caudal) + "(L/s)"
 
-		return highest
+		return result
 
 
 #############################################################################
 					
 	def get_smallest_area(self):
 		smallest = self.object_list[0]
+		result = smallest.nombre + " - " + str(smallest.area) + "(Ha)"
 		for item in self.object_list:
 			if item.area < smallest.area:
 				smallest = item
-		return smallest
+				result = smallest.nombre + " - " + str(smallest.area) + "(Ha)"
+		return result
 
 			
 	def get_smallest_source(self):
 			queryset = self.object_list
 			source_queryset = Nacimiento.objects.all()
 			smallest = queryset[0]
+			result = smallest.nombre
 			count = 0
-			
+			aux =  100
 			for predio in queryset:
-				aux = count
+				
 				count = 0
 				
 				for source in source_queryset:
@@ -148,28 +160,36 @@ class MapView(ListView):
 						count = count + 1
 											
 				if count < aux:
+					aux = count
 					smallest = predio
+					result = smallest.nombre 
 						
-			return smallest
+			return result + " - " + str(aux) + " Nacimiento(s)" 
 
 	def get_smallest_volume(self):
 		queryset = self.object_list
 		source_queryset = Nacimiento.objects.all()
 		smallest = queryset[0]
+		result = smallest.nombre 
 		caudal = 0
-
+		aux = source_queryset[0].caudal
 		for predio in queryset:
-			aux = caudal
+			
 			caudal = 0
 
 			for source in source_queryset:
 				if source.predio == predio:
-					caudal = caudal+ source.caudal
+					caudal = caudal + source.caudal
+			
+			print caudal
+			print aux
 
 			if caudal < aux:
 				smallest = predio
+				aux = caudal
+				result = smallest.nombre + " - " + str(caudal) + '(L/s)'
 
-		return smallest
+		return result 
 
 
 ############################################################
