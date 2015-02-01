@@ -181,36 +181,11 @@ class MapView(ListView):
 				if source.predio == predio:
 					caudal = caudal + source.caudal
 			
-			print caudal
-			print aux
-
 			if caudal < aux:
 				smallest = predio
 				aux = caudal
 				result = smallest.nombre + " - " + str(caudal) + '(L/s)'
 
 		return result 
-
-
-############################################################
-
-	def get_highest_caudal_source(self):
-		queryset = Nacimiento.objects.all()
-		smallest = queryset[0]
-
-		for item in queryset:
-			if item.caudal < smallest.caudal:
-				smallest = item
-
-		return smallest
-
-
-	def get_higher_caudal_source(self):
-		queryset = Nacimiento.objects.all()
-		highest = queryset[0]
-		for item in queryset:
-			if item > highest:
-					highest = item
-		return highest
 
 
