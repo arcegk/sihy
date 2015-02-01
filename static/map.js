@@ -181,17 +181,17 @@ var markerse = [];
                 var tag = "</li>";
                 var text = /* thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag + */
                             html + 'Nombre: ' + predio.nombre + tag +
-                            html + "catastro: " + predio.catastro+ tag +
-                            html + 'escritura :' + predio.escritura+ tag +
-                            html +'area: ' + predio.area+ tag +
-                            html +'corregimiento: ' + predio.corregimiento+ tag +
-                            html +'vereda: ' + predio.vereda+ tag +
-                            html +'cuenca: ' + predio.cuenca+ tag +
-                            html +'sub cuenca: ' + predio.sub_cuenca+ tag +
-                            html +'temperatura: ' + predio.temperatura+ tag +
-                            html +'via pavimentada: ' + predio.via_pavimentada+ tag +
-                            html +'via destapada: ' + predio.via_destapada+ tag +
-                            html +'via trocha: ' + predio.via_trocha+ tag +"</div>";
+                            html + "Catastro: " + predio.catastro+ tag +
+                            html + 'Escritura :' + predio.escritura+ tag +
+                            html +'Area: ' + predio.area+ tag +
+                            html +'Corregimiento: ' + predio.corregimiento+ tag +
+                            html +'Vereda: ' + predio.vereda+ tag +
+                            html +'Cuenca: ' + predio.cuenca+ tag +
+                            html +'Sub cuenca: ' + predio.sub_cuenca+ tag +
+                            html +'Temperatura: ' + predio.temperatura+ tag +
+                            html +'Via pavimentada: ' + predio.via_pavimentada+ tag +
+                            html +'Via destapada: ' + predio.via_destapada+ tag +
+                            html +'Via trocha: ' + predio.via_trocha+ tag +"</div>";
 
                 return text
 
@@ -201,20 +201,20 @@ var markerse = [];
               
               var html = "<li  class='list-group-item' >";
               var tag = "</li>";
-              var text =  html + 'identificador: ' + nacimiento.identificador + tag +
-                          html + 'caudal: ' + nacimiento.caudal+ tag +
-                          html + 'ph: ' + nacimiento.ph+ tag +
-                          html + 'color: ' + nacimiento.color+ tag +
-                          html + 'turbiedad: ' + nacimiento.turbiedad+ tag +
-                          html + 'dureza: ' + nacimiento.dureza+ tag +
-                          html + 'sulfatos: ' + nacimiento.sulfatos+ tag +
-                          html + 'nitratos: ' + nacimiento.nitratos+ tag +
-                          html + 'temperatura: ' + nacimiento.temperatura+ tag +
-                          html + 'dbo: ' + nacimiento.dbo+ tag +
-                          html + 'solidos: ' + nacimiento.solidos+ tag +
-                          html + 'dqo: ' + nacimiento.dqo+ tag +
-                          html + 'coliformes: ' + nacimiento.coliformes+ tag +
-                          html + 'altura: ' + nacimiento.altura+ tag + "</div>" ;
+              var text =  html + 'Identificador: ' + nacimiento.identificador + tag +
+                          html + 'Caudal: ' + nacimiento.caudal+ tag +
+                          html + 'Ph: ' + nacimiento.ph+ tag +
+                          html + 'Color: ' + nacimiento.color+ tag +
+                          html + 'Turbiedad: ' + nacimiento.turbiedad+ tag +
+                          html + 'Dureza: ' + nacimiento.dureza+ tag +
+                          html + 'Sulfatos: ' + nacimiento.sulfatos+ tag +
+                          html + 'Nitratos: ' + nacimiento.nitratos+ tag +
+                          html + 'Temperatura: ' + nacimiento.temperatura+ tag +
+                          html + 'Dbo: ' + nacimiento.dbo+ tag +
+                          html + 'Sólidos: ' + nacimiento.solidos+ tag +
+                          html + 'Dqo: ' + nacimiento.dqo+ tag +
+                          html + 'Coliformes: ' + nacimiento.coliformes+ tag +
+                          html + 'Altura: ' + nacimiento.altura+ tag + "</div>" ;
 
 
                 return text
