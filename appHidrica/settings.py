@@ -60,7 +60,6 @@ INSTALLED_APPS = (
     'map',
     'endless_pagination',
     'gunicorn',
-    'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (

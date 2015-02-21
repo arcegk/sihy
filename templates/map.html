@@ -1,6 +1,4 @@
 ﻿ <html lang="es"  xmlns="http://www.w3.org/1999/xhtml">
-{%load cache%}
-{% cache 90 op %}
 {% load static from staticfiles %}
 
 <head>
@@ -15,7 +13,7 @@
 <script src="{%static 'fun.js'%}"></script>
 </script>
 <script type="text/javascript" src="{% static 'map.js' %}"></script>
-<script src="{% static 'boostrap.min.js' %}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
         var predios = {{object_list_json|safe}};
         </script>
@@ -46,9 +44,9 @@
   <div class="row" >
     <div class="well fixed"> 
  		<div class="col-md-11">
-			<h1>Sistema de información Hídrica de Yumbo (SIHY)</h1>
+			<h1>Sistema de información Hídrico de Yumbo (SIHY)</h1>
 		</div>
-		<div class"col-md-1">
+		<div class"col-md-1>
 			<img src="{%static 'ic.png'%}">
 		</div>
 	</div>
@@ -91,8 +89,7 @@
         </div>
     </div>
   </div>
-
-{% endcache %}
+     
     
 
 </body>

@@ -191,7 +191,11 @@ var markerse = [];
                             html +'Temperatura: ' + predio.temperatura+ tag +
                             html +'Via pavimentada: ' + predio.via_pavimentada+ tag +
                             html +'Via destapada: ' + predio.via_destapada+ tag +
-                            html +'Via trocha: ' + predio.via_trocha+ tag +"</div>";
+                            html +'Via trocha: ' + predio.via_trocha+ tag +
+                             html + 'Protegido: ' + predio.Protegido + tag +
+                            html + 'Numero de acuerdo: ' + predio.n_acta + tag +
+                            html + 'Fecha de acuerdo: ' + predio.f_acta + tag +
+                            html + 'Observaciones: ' + predio.observaciones + tag +"</div>";
 
                 return text
 

@@ -44,6 +44,9 @@ class MapView(ListView):
 					'via_trocha': item.via_trocha,
 					'id' : item.id , 
 					'nombre' : item.nombre ,
+					'n_acta' : item.numero_acta,
+					'f_acta' : item.fecha_acta,
+					'observaciones' : item.observaciones,
 	                })
 	            
 	        return json.dumps(items)
@@ -72,6 +75,7 @@ class MapView(ListView):
 				'latitude' : item.latitude,
 				'longitude' : item.longitude,
 				'identificador' : item.identificador,
+				
 				})
 		return json.dumps(items)
 
