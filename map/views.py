@@ -5,7 +5,7 @@ from .models import Predio , Nacimiento
 from endless_pagination.views import AjaxListView
 from django.views.generic.list import ListView
 from django.core.paginator import Paginator
-
+from django.db.models import Max , Min
 
 class MapView(ListView):
 	template_name = 'map.html'
@@ -77,15 +77,10 @@ class MapView(ListView):
 
 ############################################################################
 	def get_highest_area(self):
-		highest = self.object_list[0]
-		result = highest.nombre + " - " + str(highest.area) + "(Ha)"
-		for item in self.object_list:
-			if item.area > highest.area:
-				highest = item
 
-				result = highest.nombre + " - " + "Nacimientos(s)" 
-
-		return result
+		arg = Predio.objects.all().aggregate(Max('area'))['area__max']
+		result = Predio.objects.get(area=arg)
+		return result.nombre + '-' + str(result.area)
 
 	
 	def get_highest_source(self):
@@ -135,13 +130,9 @@ class MapView(ListView):
 #############################################################################
 					
 	def get_smallest_area(self):
-		smallest = self.object_list[0]
-		result = smallest.nombre + " - " + str(smallest.area) + "(Ha)"
-		for item in self.object_list:
-			if item.area < smallest.area:
-				smallest = item
-				result = smallest.nombre + " - " + str(smallest.area) + "(Ha)"
-		return result
+		args = Predio.objects.all().aggregate(Min('area'))['area__min']
+		result = Predio.objects.get(area=args)
+		return result.nombre + '-' + str(result.area)
 
 			
 	def get_smallest_source(self):
