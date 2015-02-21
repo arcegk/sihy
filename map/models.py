@@ -20,9 +20,20 @@ class Predio(models.Model):
 	via_pavimentada = models.FloatField(default = 0.0)
 	via_destapada = models.FloatField(default = 0.0)
 	via_trocha = models.FloatField(default = 0.0)
+	protegido = models.BooleanField(default=True)
+	numero_acta = models.CharField(max_length=25, default='')
+	fecha_acta = models.CharField(max_length=25, default='')
+	observaciones = models.TextField(default="")
 
 	def __str__(self):
 		return ( "%s") % (self.nombre)
+
+	def save(self, *args, **kwargs):
+
+		if not self.protegido:
+			self.numero_acta="NO PROTEGIDO"
+			self.fecha_acta="NO PROTEGIDO"
+		return super(Predio, self).save(*args, **kwargs)
 
 
 
