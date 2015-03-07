@@ -25,14 +25,14 @@ class Predio(models.Model):
 	fecha_acta = models.CharField(max_length=25, blank=True)
 	observaciones = models.TextField(blank=True)
 	url = models.URLField(default="")
-	ecosistema = models.CharField(max_length=50 , default="")
-	zona_de_vida = models.CharField(max_length=50, default="")
-	altura_max = models.CharField(max_length=25, default="")
-	altura_min = models.CharField(max_length=25, default="")
-	clima = models.CharField(max_length=25 , default="")
-	suelos = models.CharField(max_length=25, default="")
-	relieve = models.CharField(max_length=25, default="")
-	clase_agrologica = models.CharField(max_length=25 , default="")
+	ecosistema = models.CharField(max_length=50 , blank=True)
+	zona_de_vida = models.CharField(max_length=50, blank=True)
+	altura_max = models.CharField(max_length=25, blank=True)
+	altura_min = models.CharField(max_length=25, blank=True)
+	clima = models.CharField(max_length=25 ,blank=True)
+	suelos = models.CharField(max_length=25,blank=True)
+	relieve = models.CharField(max_length=25, blank=True)
+	clase_agrologica = models.CharField(max_length=25 , blank=True)
 
 
 
@@ -50,7 +50,7 @@ class Predio(models.Model):
 
 class Nacimiento(models.Model):
 	
-	identificador = models.CharField(max_length=25, default='')
+	nacimiento = models.CharField(max_length=25, default='')
 	caudal = models.FloatField(default = 0.0)
 	color = models.IntegerField(default=0)
 	ph = models.FloatField (default=0.0)
