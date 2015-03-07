@@ -195,14 +195,14 @@ var markerse = [];
                             html + 'Protegido: ' + predio.Protegido + tag +
                             html + 'Numero de acuerdo: ' + predio.n_acta + tag +
                             html + 'Fecha de acuerdo: ' + predio.f_acta + tag +
-                            html + 'ecosistema' + predio.ecosistema + tag +
-                            html + 'zona de vida' + predio.zona_de_vida + tag  + 
-                            html + 'altura max' + predio.altura_max + tag + 
-                            html + 'altura min' + predio.altura_min + tag + 
-                            html + 'clima' + predio.clima + tag + 
-                            html + 'suelos' + predio.suelos + tag + 
-                            html + 'relieve'  + predio.relieve + tag + 
-                            html + 'clase agrologica' + predio.clase_agrologica + tag + 
+                            html + 'Ecosistema:' + predio.ecosistema + tag +
+                            html + 'Zona de vida:' + predio.zona_de_vida + tag  + 
+                            html + 'Altura max:' + predio.altura_max + tag + 
+                            html + 'Altura min:' + predio.altura_min + tag + 
+                            html + 'Clima:' + predio.clima + tag + 
+                            html + 'Suelos:' + predio.suelos + tag + 
+                            html + 'Relieve:'  + predio.relieve + tag + 
+                            html + 'Clase agrologica:' + predio.clase_agrologica + tag + 
 
 
                             html + 'Observaciones: ' + predio.observaciones + tag +"</div>";
