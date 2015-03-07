@@ -54,7 +54,7 @@ class MapView(ListView):
 					'altura_min': item.altura_min,
 					'clima': item.clima,
 					'suelos': item.suelos,
-					'relieve': item.relieve
+					'relieve': item.relieve,
 					'clase_agrologica': item.clase_agrologica,
 	                })
 	            
