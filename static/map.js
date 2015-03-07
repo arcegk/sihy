@@ -192,9 +192,19 @@ var markerse = [];
                             html +'Via pavimentada: ' + predio.via_pavimentada+ tag +
                             html +'Via destapada: ' + predio.via_destapada+ tag +
                             html +'Via trocha: ' + predio.via_trocha+ tag +
-                             html + 'Protegido: ' + predio.Protegido + tag +
+                            html + 'Protegido: ' + predio.Protegido + tag +
                             html + 'Numero de acuerdo: ' + predio.n_acta + tag +
                             html + 'Fecha de acuerdo: ' + predio.f_acta + tag +
+                            html + 'ecosistema' + predio.ecosistema + tag
+                            html + 'zona de vida' + predio.zona_de_vida + tag
+                            html + 'altura max' + predio.altura_max + tag
+                            html + 'altura min' + predio.altura_min + tag
+                            html + 'clima' + predio.clima + tag
+                            html + 'suelos' + predio.suelos + tag
+                            html + 'relieve'  + predio.relieve + tag
+                            html + 'clase agrologica' + predio.clase_agrologica + tag
+
+
                             html + 'Observaciones: ' + predio.observaciones + tag +"</div>";
 
                 return text

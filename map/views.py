@@ -48,6 +48,14 @@ class MapView(ListView):
 					'f_acta' : item.fecha_acta,
 					'observaciones' : item.observaciones,
 					'url' : item.url,
+					'ecosistema': item.ecosistema,
+					'zona_de_vida': item.zona_de_vida,
+					'altura_max': item.altura_max,
+					'altura_min': item.altura_min,
+					'clima': item.clima,
+					'suelos': item.suelos,
+					'relieve': item.relieve
+					'clase_agrologica': item.clase_agrologica,
 	                })
 	            
 	        return json.dumps(items)
