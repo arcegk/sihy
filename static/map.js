@@ -179,7 +179,7 @@ var markerse = [];
                 var html = "<li" + " class="+"list-group-item"+">";
                 var thumb = "<li class='list-group-item thumbnail'>";
                 var tag = "</li>";
-                var text = /* thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag + */
+                var text =  thumb + "<img src='" + predio.url + "' alt='thumb'" + tag + 
                             html + 'Nombre: ' + predio.nombre + tag +
                             html + "Catastro: " + predio.catastro+ tag +
                             html + 'Escritura :' + predio.escritura+ tag +

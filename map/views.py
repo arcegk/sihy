@@ -47,6 +47,7 @@ class MapView(ListView):
 					'n_acta' : item.numero_acta,
 					'f_acta' : item.fecha_acta,
 					'observaciones' : item.observaciones,
+					'url' : item.url,
 	                })
 	            
 	        return json.dumps(items)
