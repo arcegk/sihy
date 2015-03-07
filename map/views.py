@@ -3,9 +3,13 @@ from django.shortcuts import render
 import json
 from .models import Predio , Nacimiento
 from endless_pagination.views import AjaxListView
-from django.views.generic.list import ListView
+from django.views.generic.list import ListView , TemplateView
+    template_name = "TEMPLATE_NAME"
 from django.core.paginator import Paginator
 from django.db.models import Max , Min
+
+class PrintView(TemplateView):
+	template_name = 'print.html'
 
 class MapView(ListView):
 	template_name = 'map.html'

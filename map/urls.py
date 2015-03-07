@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^map/', views.MapView.as_view(), name="mape"),
+    url(r'^map/', views.PrintView.as_view(), name="print"),
  	
  )
