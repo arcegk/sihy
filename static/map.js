@@ -188,7 +188,7 @@ var markerse = [];
                             html +'Vereda: ' + predio.vereda+ tag +
                             html +'Cuenca: ' + predio.cuenca+ tag +
                             html +'Sub cuenca: ' + predio.sub_cuenca+ tag +
-                            html +'Temperatura: ' + predio.temperatura+ tag +
+                            html +'Temperatura: ' + predio.temperatura_promedio+ tag +
                             html +'Via pavimentada: ' + predio.via_pavimentada+ tag +
                             html +'Via destapada: ' + predio.via_destapada+ tag +
                             html +'Via trocha: ' + predio.via_trocha+ tag +

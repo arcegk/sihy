@@ -38,7 +38,7 @@ class MapView(ListView):
 					'vereda': item.vereda,
 					'cuenca': item.cuenca,
 					'sub_cuenca': item.sub_cuenca,
-					'temperatura': item.temperatura,
+					'temperatura': item.temperatura_promedio,
 					'via_pavimentada': item.via_pavimentada,
 					'via_destapada': item.via_destapada,
 					'via_trocha': item.via_trocha,
