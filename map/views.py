@@ -4,7 +4,6 @@ import json
 from .models import Predio , Nacimiento
 from endless_pagination.views import AjaxListView
 from django.views.generic.list import ListView , TemplateView
-    template_name = "TEMPLATE_NAME"
 from django.core.paginator import Paginator
 from django.db.models import Max , Min
 
