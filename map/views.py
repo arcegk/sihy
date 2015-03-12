@@ -60,7 +60,7 @@ class MapView(ListView):
 					'suelos': item.suelos,
 					'relieve': item.relieve,
 					'clase_agrologica': item.clase_agrologica,
-					'protegio' : item.protegio,
+					'protegio' : item.protegido,
 	                })
 	            
 	        return json.dumps(items)
