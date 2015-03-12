@@ -42,7 +42,7 @@ class MapView(ListView):
 					'vereda': item.vereda,
 					'cuenca': item.cuenca,
 					'sub_cuenca': item.sub_cuenca,
-					'temperatura': item.temperatura_promedio,
+					'temperatura_promedio': item.temperatura_promedio,
 					'via_pavimentada': item.via_pavimentada,
 					'via_destapada': item.via_destapada,
 					'via_trocha': item.via_trocha,
@@ -60,6 +60,7 @@ class MapView(ListView):
 					'suelos': item.suelos,
 					'relieve': item.relieve,
 					'clase_agrologica': item.clase_agrologica,
+					'protegio' : item.protegio,
 	                })
 	            
 	        return json.dumps(items)

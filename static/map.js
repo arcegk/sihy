@@ -183,7 +183,7 @@ var markerse = [];
                             html + 'Nombre: ' + predio.nombre + tag +
                             html + "Catastro: " + predio.catastro+ tag +
                             html + 'Escritura :' + predio.escritura+ tag +
-                            html +'Area: ' + predio.area+ tag +
+                            html +'Area (Ha): ' + predio.area+ tag +
                             html +'Corregimiento: ' + predio.corregimiento+ tag +
                             html +'Vereda: ' + predio.vereda+ tag +
                             html +'Cuenca: ' + predio.cuenca+ tag +
@@ -192,7 +192,7 @@ var markerse = [];
                             html +'Via pavimentada: ' + predio.via_pavimentada+ tag +
                             html +'Via destapada: ' + predio.via_destapada+ tag +
                             html +'Via trocha: ' + predio.via_trocha+ tag +
-                            html + 'Protegido: ' + predio.Protegido + tag +
+                            html + 'Protegido: ' + predio.protegido + tag +
                             html + 'Numero de acuerdo: ' + predio.n_acta + tag +
                             html + 'Fecha de acuerdo: ' + predio.f_acta + tag +
                             html + 'Ecosistema:' + predio.ecosistema + tag +
@@ -215,7 +215,7 @@ var markerse = [];
               
               var html = "<li  class='list-group-item' >";
               var tag = "</li>";
-              var text =  html + 'Identificador: ' + nacimiento.identificador + tag +
+              var text =  html + 'Nacimiento: ' + nacimiento.identificador + tag +
                           html + 'Caudal: ' + nacimiento.caudal+ tag +
                           html + 'Ph: ' + nacimiento.ph+ tag +
                           html + 'Color: ' + nacimiento.color+ tag +
