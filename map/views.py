@@ -32,9 +32,10 @@ class MapView(ListView):
 	def get_json_results(self):
 	        items = []
 
-	        protmegido = "NO PROTEGIDO"
-	        for item in self.object_list:
+			
+			for item in self.object_list:
 	        	
+	                
 				items.append({
 	                'latitude': item.latitude if item.latitude else None,
 	                'longitude': item.longitude if item.longitude else None,
@@ -63,7 +64,7 @@ class MapView(ListView):
 					'suelos': item.suelos,
 					'relieve': item.relieve,
 					'clase_agrologica': item.clase_agrologica,
-					'protegido' : protmegido,
+					'protegido' : "PROTEGIDO" if item.protegido else "NO PROTEGIDO",
 	                })
 	            
 	        return json.dumps(items)
