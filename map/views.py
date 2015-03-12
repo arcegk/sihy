@@ -34,7 +34,7 @@ class MapView(ListView):
 	        protegido = "PROTEGIDO"
 	        for item in self.object_list:
 	        	
-	        	if not predio.protegido:
+	        	if not item.protegido:
 	        		protegio = "NO PROTEGIDO"
 	           
 
