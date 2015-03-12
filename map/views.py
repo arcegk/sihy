@@ -35,10 +35,6 @@ class MapView(ListView):
 	        protmegido = "NO PROTEGIDO"
 	        for item in self.object_list:
 	        	
-	        		if item.protegido:
-	        			protegido = "PROTEGIDO"
-	           
-
 				items.append({
 	                'latitude': item.latitude if item.latitude else None,
 	                'longitude': item.longitude if item.longitude else None,
