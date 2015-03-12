@@ -32,6 +32,8 @@ class MapView(ListView):
 	def get_json_results(self):
 	        items = []
 
+
+
 			for item in self.object_list:
 	        	                
 				items.append({
