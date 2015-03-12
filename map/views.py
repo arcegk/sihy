@@ -35,7 +35,7 @@ class MapView(ListView):
 	        for item in self.object_list:
 	        	
 	        		if item.protegido:
-	        			protegio = "PROTEGIDO"
+	        			protegido = "PROTEGIDO"
 	           
 
 				items.append({
