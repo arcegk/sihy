@@ -20,7 +20,7 @@ class Predio(models.Model):
 	via_pavimentada = models.FloatField(default = 0.0)
 	via_destapada = models.FloatField(default = 0.0)
 	via_trocha = models.FloatField(default = 0.0)
-	protegido = models.BooleanField(default=True)
+	protegido = models.BooleanField()
 	numero_acta = models.CharField(max_length=25, blank=True)
 	fecha_acta = models.CharField(max_length=25, blank=True)
 	observaciones = models.TextField(blank=True)
@@ -44,6 +44,7 @@ class Predio(models.Model):
 		if not self.protegido:
 			self.numero_acta="NO PROTEGIDO"
 			self.fecha_acta="NO PROTEGIDO"
+			self.protegido = False
 		return super(Predio, self).save(*args, **kwargs)
 
 
