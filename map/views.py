@@ -36,8 +36,9 @@ class MapView(ListView):
 	        	
 	        	if not predio.protegido:
 	        		protegio = "NO PROTEGIDO"
-	            
-	            items.append({
+	           
+
+				items.append({
 	                'latitude': item.latitude if item.latitude else None,
 	                'longitude': item.longitude if item.longitude else None,
 	                'catastro' : item.catastro,
