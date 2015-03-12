@@ -31,11 +31,11 @@ class MapView(ListView):
  		return context
 	def get_json_results(self):
 	        items = []
-	        protegido = "PROTEGIDO"
+	        protegido = "NO PROTEGIDO"
 	        for item in self.object_list:
 	        	
-	        	if not item.protegido:
-	        		protegio = "NO PROTEGIDO"
+	        	if item.protegido:
+	        		protegio = "PROTEGIDO"
 	           
 
 				items.append({
