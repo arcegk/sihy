@@ -31,7 +31,7 @@ class Predio(models.Model):
 	altura_min = models.CharField(max_length=25, blank=True)
 	clima = models.CharField(max_length=25 ,blank=True)
 	suelos = models.CharField(max_length=25,blank=True)
-	relieve = models.CharField(max_length=25, blank=True)
+	relieve = models.CharField(max_length=50, blank=True)
 	clase_agrologica = models.CharField(max_length=25 , blank=True)
 
 
