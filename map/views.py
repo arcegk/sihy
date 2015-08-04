@@ -63,6 +63,10 @@ class MapView(ListView):
 					'relieve': item.relieve,
 					'clase_agrologica': item.clase_agrologica,
 					'protegido' : "PROTEGIDO" if item.protegido else "NO PROTEGIDO",
+					'vendedor' : item.vendedor,
+					'f_adquisicion' : item.fecha_adquisicion,
+					'valor' : item.valor,
+					'plan' : "SIN PLAN" if item.plan_manejo == "" else item.plan_manejo,
 	                })
 	            
 	        return json.dumps(items)

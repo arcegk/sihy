@@ -7,6 +7,10 @@ from . import constants
 class Predio(models.Model):
 
 	nombre = models.CharField(max_length=30 , blank=False)
+	vendedor = models.CharField(max_length=50, blank=True)
+	fecha_adquisicion = models.CharField(max_length=30, blank=True)
+	valor = models.FloatField(default = 0.0)
+	plan_manejo = models.CharField(max_length=100, blank=True)
 	catastro = models.CharField(max_length=25)
 	escritura = models.CharField(max_length=25)
 	area = models.FloatField( verbose_name=u'area (Ha)')

@@ -178,9 +178,19 @@ var markerse = [];
                 
                 var html = "<li" + " class="+"list-group-item"+">";
                 var thumb = "<li class='list-group-item thumbnail'>";
+                var tm = "";
+                if (predio.plan == "SIN PLAN"){ 
+                    tm = predio.plan
+                }else{
+                    tm ="<a href='predio.plan'>ver plan</a>";
+                }
                 var tag = "</li>";
                 var text =  thumb + "<img src='" + predio.url + "' alt='thumb'" + tag + 
                             html + 'Nombre: ' + predio.nombre + tag +
+                            html + 'Vendedor: ' + predio.vendedor + tag +
+                            html + 'fecha de aquisición: ' + predio.f_adquisicion + tag +
+                            html + 'valor: ' + predio.valor + tag +
+                            html + 'plan de manejo: ' + tm + tag +
                             html + "Catastro: " + predio.catastro+ tag +
                             html + 'Escritura :' + predio.escritura+ tag +
                             html +'Area (Ha): ' + predio.area+ tag +
