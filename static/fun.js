@@ -38,7 +38,24 @@ var scrolling = function () {
             $("#itm4").click(function(){
                 $("#sub4").collapse('toggle');
             });
-        
+            $("#itm5").click(function(){
+                $("#sub5").collapse('toggle');
+            });
+            $("#itm6").click(function(){
+                $("#sub6").collapse('toggle');
+            });
+            $("#itm7").click(function(){
+                $("#sub7").collapse('toggle');
+            });
+            $("#itm8").click(function(){
+                $("#sub8").collapse('toggle');
+            });
+            $("#itm9").click(function(){
+                $("#sub9").collapse('toggle');
+            });
+            $("#itm10").click(function(){
+                $("#sub10").collapse('toggle');
+            });
 }
 
     return {
