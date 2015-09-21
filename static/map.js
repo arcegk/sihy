@@ -182,7 +182,7 @@ var markerse = [];
                 if (predio.plan == "SIN PLAN"){ 
                     tm = predio.plan;
                 }else{
-                    tm ="<a href='" + predio.plan + "'>ver plan</a>";
+                    tm ="<a target='_blank' href='" + predio.plan + "'>ver plan</a>";
                 }
                 var tag = "</li>";
                 var text =  thumb + "<img src='" + predio.url + "' alt='thumb'" + tag + 
