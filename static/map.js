@@ -180,9 +180,9 @@ var markerse = [];
                 var thumb = "<li class='list-group-item thumbnail'>";
                 var tm = "";
                 if (predio.plan == "SIN PLAN"){ 
-                    tm = predio.plan
+                    tm = predio.plan;
                 }else{
-                    tm ="<a href='predio.plan'>ver plan</a>";
+                    tm ="<a href='" + predio.plan + "'>ver plan</a>";
                 }
                 var tag = "</li>";
                 var text =  thumb + "<img src='" + predio.url + "' alt='thumb'" + tag + 
