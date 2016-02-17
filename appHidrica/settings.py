@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 from os.path import join, dirname
 
+import environ
+
+env = environ.Env()
+
 BASE_DIR = dirname(dirname(__file__))
 
 
@@ -38,14 +42,14 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c7*26wgvu9=8isy5lrl)8yp$7j(nz*jxjd2rky32gp3)bis)zr'
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,14 +85,7 @@ WSGI_APPLICATION = 'appHidrica.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2pi32vnaplu5c',
-        'USER' : 'fforgggqadwlyr',
-        'PASSWORD': 'c9cOdEkSSoHl_c80IBh2vMXuUg',
-        'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+    'default': env.db("DATABASE_URL")
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
