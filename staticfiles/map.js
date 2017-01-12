@@ -53,22 +53,25 @@ var listLinks = document.getElementById("lista");
 var infoNac = document.getElementById("info");
 var markers = [];
 var markerse = [];
+
+
     (function (){
 
         $.each(predios, function(i, predio) {
-           /* iterate through array or object */
+           
           
             
             var latlng = new google.maps.LatLng(predio.latitude, predio.longitude);
 
             marker = new google.maps.Marker({
                 position: latlng,
-                map: mymap
+                map: mymap,
+                title : predio.nombre
             });
 
             bounds.extend(latlng);
            
-
+           
             google.maps.event.addListener(marker, 'click', function(e) {
 
                 mymap.setZoom(18);
@@ -127,6 +130,7 @@ var markerse = [];
                       position: latlng,
                       map: mymap,
                       icon: '/static/icon.png',
+                      title : nacimiento.identificador + '-' + predio.nombre
                   });
 
                   bounds.extend(latlng);
@@ -161,7 +165,7 @@ var markerse = [];
              window.setTimeout(function() {
                   mymap.setZoom(9);
                   window.setTimeout(function() {
-                  mymap.setZoom(14);
+                  mymap.setZoom(12);
                   
              }, 1000);
              }, 3000);
@@ -174,33 +178,44 @@ var markerse = [];
                 
                 var html = "<li" + " class="+"list-group-item"+">";
                 var thumb = "<li class='list-group-item thumbnail'>";
+                var tm = "";
+                if (predio.plan == "SIN PLAN"){ 
+                    tm = predio.plan;
+                }else{
+                    tm ="<a target='_blank' href='" + predio.plan + "'>ver plan</a>";
+                }
                 var tag = "</li>";
-                var text =  thumb + "<img src='" + predio.photo + "' alt='thumb'" + tag +
+                var text =  thumb + "<img src='" + predio.url + "' alt='thumb'" + tag + 
                             html + 'Nombre: ' + predio.nombre + tag +
-                            html + 'Vendedor: ' + pedio.vendedor + tag +
+                            html + 'Vendedor: ' + predio.vendedor + tag +
                             html + 'fecha de aquisición: ' + predio.f_adquisicion + tag +
                             html + 'valor: ' + predio.valor + tag +
-                            if (predio.plan == "SIN PLAN"){
+                            html + 'plan de manejo: ' + tm + tag +
+                            html + "Catastro: " + predio.catastro+ tag +
+                            html + 'Escritura :' + predio.escritura+ tag +
+                            html +'Area (Ha): ' + predio.area+ tag +
+                            html +'Corregimiento: ' + predio.corregimiento+ tag +
+                            html +'Vereda: ' + predio.vereda+ tag +
+                            html +'Cuenca: ' + predio.cuenca+ tag +
+                            html +'Sub cuenca: ' + predio.sub_cuenca+ tag +
+                            html +'Temperatura (°C): ' + predio.temperatura_promedio+ tag +
+                            html +'Via pavimentada: ' + predio.via_pavimentada+ tag +
+                            html +'Via destapada: ' + predio.via_destapada+ tag +
+                            html +'Via trocha: ' + predio.via_trocha+ tag +
+                            html + 'Protegido: ' + predio.protegido + tag +
+                            html + 'Numero de acuerdo: ' + predio.n_acta + tag +
+                            html + 'Fecha de acuerdo: ' + predio.f_acta + tag +
+                            html + 'Ecosistema:' + predio.ecosistema + tag +
+                            html + 'Zona de vida:' + predio.zona_de_vida + tag  + 
+                            html + 'Altura max:' + predio.altura_max + tag + 
+                            html + 'Altura min:' + predio.altura_min + tag + 
+                            html + 'Clima:' + predio.clima + tag + 
+                            html + 'Suelos:' + predio.suelos + tag + 
+                            html + 'Relieve:'  + predio.relieve + tag + 
+                            html + 'Clase agrologica:' + predio.clase_agrologica + tag + 
 
-                              html + 'plan de manejo: ' + predio.plan + tag +
 
-                            }else{
-
-                              html + 'plan de manejo: ' + predio.plan + tag +
-
-                            } 
-                            html + "catastro: " + predio.catastro+ tag +
-                            html + 'escritura :' + predio.escritura+ tag +
-                            html +'area: ' + predio.area+ tag +
-                            html +'corregimiento: ' + predio.corregimiento+ tag +
-                            html +'vereda: ' + predio.vereda+ tag +
-                            html +'cuenca: ' + predio.cuenca+ tag +
-                            html +'sub cuenca: ' + predio.sub_cuenca+ tag +
-                            html +'temperatura: ' + predio.temperatura+ tag +
-                            html +'presion antropica: ' + predio.presion_antropica+ tag +
-                            html +'via pavimentada: ' + predio.via_pavimentada+ tag +
-                            html +'via destapada: ' + predio.via_destapada+ tag +
-                            html +'via trocha: ' + predio.via_trocha+ tag +"</div>";
+                            html + 'Observaciones: ' + predio.observaciones + tag +"</div>";
 
                 return text
 
@@ -210,22 +225,20 @@ var markerse = [];
               
               var html = "<li  class='list-group-item' >";
               var tag = "</li>";
-              var text =  html + 'identificador: ' + nacimiento.identificador + tag +
-                          html + 'caudal: ' + nacimiento.caudal+ tag +
-                          html + 'ph: ' + nacimiento.ph+ tag +
-                          html + 'color: ' + nacimiento.color+ tag +
-                          html + 'turbiedad: ' + nacimiento.turbiedad+ tag +
-                          html + 'dureza: ' + nacimiento.dureza+ tag +
-                          html + 'sulfatos: ' + nacimiento.sulfatos+ tag +
-                          html + 'nitratos: ' + nacimiento.nitratos+ tag +
-                          html + 'temperatura: ' + nacimiento.temperatura+ tag +
-                          html + 'dbo: ' + nacimiento.dbo+ tag +
-                          html + 'solidos: ' + nacimiento.solidos+ tag +
-                          html + 'dqo: ' + nacimiento.dqo+ tag +
-                          html + 'coliformes: ' + nacimiento.coliformes+ tag +
-                          html + 'cabecera municipal: ' + nacimiento.cabecera_municipal+ tag +
-                          html + 'topoespecificacion: ' + nacimiento.topo_especificacion+ tag +
-                          html + 'altura: ' + nacimiento.altura+ tag + "</div>" ;
+              var text =  html + 'Nacimiento: ' + nacimiento.identificador + tag +
+                          html + 'Caudal: ' + nacimiento.caudal+ tag +
+                          html + 'Ph: ' + nacimiento.ph+ tag +
+                          html + 'Color: ' + nacimiento.color+ tag +
+                          html + 'Turbiedad: ' + nacimiento.turbiedad+ tag +
+                          html + 'Dureza: ' + nacimiento.dureza+ tag +
+                          html + 'Sulfatos: ' + nacimiento.sulfatos+ tag +
+                          html + 'Nitratos: ' + nacimiento.nitratos+ tag +
+                          html + 'Temperatura: ' + nacimiento.temperatura+ tag +
+                          html + 'Dbo: ' + nacimiento.dbo+ tag +
+                          html + 'Sólidos: ' + nacimiento.solidos+ tag +
+                          html + 'Dqo: ' + nacimiento.dqo+ tag +
+                          html + 'Coliformes: ' + nacimiento.coliformes+ tag +
+                          html + 'Altura: ' + nacimiento.altura+ tag + "</div>" ;
 
 
                 return text
