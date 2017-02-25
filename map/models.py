@@ -74,4 +74,4 @@ class Nacimiento(models.Model):
 	longitude = models.FloatField(default=0.0)
 
 	def __str__(self):
-		return ("%s - %s") %(self.id, self.predio.nombre)
+		return ("%s - %s") %(self.nacimiento, self.predio.nombre)
