@@ -45,7 +45,8 @@ MEDIA_URL = '/media/'
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+DEBUG = env("DEBUG")
 
 TEMPLATE_DEBUG = True
 
